@@ -1,5 +1,8 @@
 Setup 
 
+Read seed url from console or .txt
+Read depth from console
+Read urls from the webpage and put them in a queue and parse them next
 Write working code
 
 Check for infinite loops, error handling
