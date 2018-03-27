@@ -1,9 +1,9 @@
-Setup 
+Setup - done
 
-Read seed url from console or .txt
-Read depth from console
-Read urls from the webpage and put them in a queue and parse them next
-Create a dictionary/map so that you don't visit a page twice
+Read seed url from console - done
+Read depth from console - done
+Read urls from the webpage and put them in a queue and crawl them next
+Create a dictionary/map so that you don't visit a page twice - done
 Exclude images from result
 Write working code
 
@@ -11,6 +11,8 @@ Check for infinite loops, error handling
 
 Write unit tests
 
-Setup logging and documentation modules
+Setup logging and documentation modules - doing
 
-Handle 401, 403 kind of situations
+Handle 401, 403 kind of situations - done
+
+Store urls in csv

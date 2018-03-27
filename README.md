@@ -5,7 +5,7 @@ ScrapLink is a crawler that starts with a url on the web (ex: http://python.org)
 
 "Structure of Code is Key"
 
-./LICENSE - Lawyering Up \n
-.setup.py - Package and distribution management. \n
-./requirements.txt - Development dependencies. \n
+./LICENSE - Lawyering Up <br/>
+.setup.py - Package and distribution management. <br/>
+./requirements.txt - Development dependencies. <br/>
 ./tests - Package integration and unit tests.
