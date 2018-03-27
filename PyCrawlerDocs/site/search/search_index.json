@@ -1,0 +1,24 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "Welcome to PyCrawler\n\n\nScrapLink is a crawler that starts with a url on the web (ex: http://python.org), fetches the web-page corresponding to that url, and parses all the links on that page into a repository of links. Next, it fetches the contents of any of the url from the repository just created, parses the links from this new content into the repository and continues this process for all links in the repository until stopped or after a given number of links are fetched.\n\n\n\"Structure of Code is Key\"\n\n\nCommands\n\n\n\n\npython .\\crawllink.py url maxDepth\n - Specify the seed url for crawling and a max number links that should be crawled\n\n\npython .\\crawllink.py http://python.org 40\n - Sample run\n\n\ncat url.csv\n - Shows the urls crawler, select any one child link and crawl it using the first command\n\n\ncat pythonorg.csv\n - Shows the list of urls crawled on http://python.org\n\n\n\n\nProject layout\n\n\ncrawllink.py    # The crawler program\nlogs/\n    scraplink_datetime.txt  # Log for the last run\ntests/\n    # yet to be done\n.gitignore  # mention the files or directories to be ignored by git\nCHANGELOG   # Release versions and features delivered\nLICENCE # Licence for the project used\nMakefile\nREADME.md # Readme for Git repository\nrequirements.txt # List of python modules required\nsetup.py    # Used for setting up the environment\nTODO    # List of features to be implemented",
+            "title": "Welcome to PyCrawler"
+        },
+        {
+            "location": "/#welcome-to-pycrawler",
+            "text": "ScrapLink is a crawler that starts with a url on the web (ex: http://python.org), fetches the web-page corresponding to that url, and parses all the links on that page into a repository of links. Next, it fetches the contents of any of the url from the repository just created, parses the links from this new content into the repository and continues this process for all links in the repository until stopped or after a given number of links are fetched.  \"Structure of Code is Key\"",
+            "title": "Welcome to PyCrawler"
+        },
+        {
+            "location": "/#commands",
+            "text": "python .\\crawllink.py url maxDepth  - Specify the seed url for crawling and a max number links that should be crawled  python .\\crawllink.py http://python.org 40  - Sample run  cat url.csv  - Shows the urls crawler, select any one child link and crawl it using the first command  cat pythonorg.csv  - Shows the list of urls crawled on http://python.org",
+            "title": "Commands"
+        },
+        {
+            "location": "/#project-layout",
+            "text": "crawllink.py    # The crawler program\nlogs/\n    scraplink_datetime.txt  # Log for the last run\ntests/\n    # yet to be done\n.gitignore  # mention the files or directories to be ignored by git\nCHANGELOG   # Release versions and features delivered\nLICENCE # Licence for the project used\nMakefile\nREADME.md # Readme for Git repository\nrequirements.txt # List of python modules required\nsetup.py    # Used for setting up the environment\nTODO    # List of features to be implemented",
+            "title": "Project layout"
+        }
+    ]
+}
