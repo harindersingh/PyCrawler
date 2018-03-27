@@ -26,10 +26,18 @@ def crawl_store_links(url, child_links, logger):
         in a csv file
     """
     url_file = url.strip('http:')
-    url_file = url_file.strip('~!@#$%^&*()/\\,}{;:.')
+    url_file = url_file.replace('/', '')
+    url_file = url_file.replace('.', '')
+    url_file = url_file.replace('~', '')
+    url_file = url_file.replace('$', '')
+    url_file = url_file.replace('%', '')
+    url_file = url_file.replace('#', '')
+    url_file = url_file.replace('@', '')
+    url_file = url_file.replace('&', '')
     url_file = url_file + ".csv"
-    with open(url_file, 'w') as f:
+    with open(url_file, 'w+') as f:
         csvfile = csv.writer(f)
+        logger.debug("%s file created to store urls", url_file)
         try:
             csvfile.writerow(['Parent Link', ' ChildLink'])
             for item in child_links:

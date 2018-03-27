@@ -1,0 +1,31 @@
+2018-03-28 02:54:37,128 root         DEBUG    Logger is set up
+2018-03-28 02:54:37,128 root         DEBUG    Base URL = http://python.org/dev/peps and MaxDepth = 12.
+2018-03-28 02:54:37,134 urllib3.connectionpool DEBUG    Starting new HTTP connection (1): python.org
+2018-03-28 02:54:37,704 urllib3.connectionpool DEBUG    http://python.org:80 "GET /dev/peps HTTP/1.1" 301 0
+2018-03-28 02:54:37,707 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): python.org
+2018-03-28 02:54:39,098 urllib3.connectionpool DEBUG    https://python.org:443 "GET /dev/peps HTTP/1.1" 301 178
+2018-03-28 02:54:39,110 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.python.org
+2018-03-28 02:54:39,399 urllib3.connectionpool DEBUG    https://www.python.org:443 "GET /dev/peps HTTP/1.1" 301 0
+2018-03-28 02:54:39,453 urllib3.connectionpool DEBUG    https://www.python.org:443 "GET /dev/peps/ HTTP/1.1" 200 148614
+2018-03-28 02:54:39,614 urllib3.connectionpool DEBUG    Starting new HTTP connection (1): python.org
+2018-03-28 02:54:40,134 urllib3.connectionpool DEBUG    http://python.org:80 "GET /dev/peps HTTP/1.1" 301 0
+2018-03-28 02:54:40,139 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): python.org
+2018-03-28 02:54:41,369 urllib3.connectionpool DEBUG    https://python.org:443 "GET /dev/peps HTTP/1.1" 301 178
+2018-03-28 02:54:41,377 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.python.org
+2018-03-28 02:54:41,689 urllib3.connectionpool DEBUG    https://www.python.org:443 "GET /dev/peps HTTP/1.1" 301 0
+2018-03-28 02:54:41,743 urllib3.connectionpool DEBUG    https://www.python.org:443 "GET /dev/peps/ HTTP/1.1" 200 148614
+2018-03-28 02:54:42,088 root         DEBUG    None
+2018-03-28 02:54:42,091 root         DEBUG    Visited https://docs.python.org, 11 more links can be crawled
+2018-03-28 02:54:42,092 root         DEBUG    Visited https://pypi.python.org/, 10 more links can be crawled
+2018-03-28 02:54:42,092 root         DEBUG    Visited http://plus.google.com/+Python, 9 more links can be crawled
+2018-03-28 02:54:42,092 root         DEBUG    Visited http://www.facebook.com/pythonlang?fref=ts, 8 more links can be crawled
+2018-03-28 02:54:42,092 root         DEBUG    Visited http://twitter.com/ThePSF, 7 more links can be crawled
+2018-03-28 02:54:42,092 root         DEBUG    Visited http://brochure.getpython.info/, 6 more links can be crawled
+2018-03-28 02:54:42,093 root         DEBUG    Visited https://docs.python.org/3/license.html, 5 more links can be crawled
+2018-03-28 02:54:42,093 root         DEBUG    Visited https://wiki.python.org/moin/BeginnersGuide, 4 more links can be crawled
+2018-03-28 02:54:42,093 root         DEBUG    Visited https://devguide.python.org/, 3 more links can be crawled
+2018-03-28 02:54:42,093 root         DEBUG    Visited https://docs.python.org/faq/, 2 more links can be crawled
+2018-03-28 02:54:42,093 root         DEBUG    Visited http://wiki.python.org/moin/Languages, 1 more links can be crawled
+2018-03-28 02:54:42,093 root         DEBUG    Visited http://python.org/dev/peps/, 0 more links can be crawled
+2018-03-28 02:54:42,093 root         DEBUG    Web urls obtained on hitting http://python.org/dev/peps, 0 more can be crawled
+2018-03-28 02:54:42,104 root         DEBUG    pythonorgdevpeps.csv file created to store urls

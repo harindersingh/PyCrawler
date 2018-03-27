@@ -1,0 +1,8 @@
+1.0.0
+
+PyCrawler with basic functionality delivered
+Crawls seed url and stores the child urls in csv file
+
+2.0.0
+
+Connect with MongoDB and use existing dictionary of urls to rank the website

@@ -1,0 +1,29 @@
+2018-03-28 03:07:20,724 root         DEBUG    Logger is set up
+2018-03-28 03:07:20,725 root         DEBUG    Base URL = http://python.org and MaxDepth = 12.
+2018-03-28 03:07:20,728 urllib3.connectionpool DEBUG    Starting new HTTP connection (1): python.org
+2018-03-28 03:07:21,280 urllib3.connectionpool DEBUG    http://python.org:80 "GET / HTTP/1.1" 301 0
+2018-03-28 03:07:21,290 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): python.org
+2018-03-28 03:07:22,570 urllib3.connectionpool DEBUG    https://python.org:443 "GET / HTTP/1.1" 301 178
+2018-03-28 03:07:22,576 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.python.org
+2018-03-28 03:07:22,834 urllib3.connectionpool DEBUG    https://www.python.org:443 "GET / HTTP/1.1" 200 48922
+2018-03-28 03:07:22,929 urllib3.connectionpool DEBUG    Starting new HTTP connection (1): python.org
+2018-03-28 03:07:23,570 urllib3.connectionpool DEBUG    http://python.org:80 "GET / HTTP/1.1" 301 0
+2018-03-28 03:07:23,574 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): python.org
+2018-03-28 03:07:24,797 urllib3.connectionpool DEBUG    https://python.org:443 "GET / HTTP/1.1" 301 178
+2018-03-28 03:07:24,808 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.python.org
+2018-03-28 03:07:25,011 urllib3.connectionpool DEBUG    https://www.python.org:443 "GET / HTTP/1.1" 200 48922
+2018-03-28 03:07:25,163 root         DEBUG    None
+2018-03-28 03:07:25,165 root         DEBUG    Visited https://docs.python.org, 11 more links can be crawled
+2018-03-28 03:07:25,165 root         DEBUG    Visited https://pypi.python.org/, 10 more links can be crawled
+2018-03-28 03:07:25,165 root         DEBUG    Visited http://plus.google.com/+Python, 9 more links can be crawled
+2018-03-28 03:07:25,165 root         DEBUG    Visited http://www.facebook.com/pythonlang?fref=ts, 8 more links can be crawled
+2018-03-28 03:07:25,165 root         DEBUG    Visited http://twitter.com/ThePSF, 7 more links can be crawled
+2018-03-28 03:07:25,165 root         DEBUG    Visited http://brochure.getpython.info/, 6 more links can be crawled
+2018-03-28 03:07:25,165 root         DEBUG    Visited https://docs.python.org/3/license.html, 5 more links can be crawled
+2018-03-28 03:07:25,165 root         DEBUG    Visited https://wiki.python.org/moin/BeginnersGuide, 4 more links can be crawled
+2018-03-28 03:07:25,165 root         DEBUG    Visited https://devguide.python.org/, 3 more links can be crawled
+2018-03-28 03:07:25,166 root         DEBUG    Visited https://docs.python.org/faq/, 2 more links can be crawled
+2018-03-28 03:07:25,166 root         DEBUG    Visited http://wiki.python.org/moin/Languages, 1 more links can be crawled
+2018-03-28 03:07:25,166 root         DEBUG    Visited http://python.org/dev/peps/, 0 more links can be crawled
+2018-03-28 03:07:25,166 root         DEBUG    Web urls obtained on hitting http://python.org, 0 more can be crawled
+2018-03-28 03:07:25,168 root         DEBUG    pythonorg.csv file created to store urls

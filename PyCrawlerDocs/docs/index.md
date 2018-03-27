@@ -8,6 +8,8 @@ ScrapLink is a crawler that starts with a url on the web (ex: http://python.org)
 
 * `python .\crawllink.py url maxDepth` - Specify the seed url for crawling and a max number links that should be crawled
 * `python .\crawllink.py http://python.org 40` - Sample run
+* `cat url.csv` - Shows the urls crawler, select any one child link and crawl it using the first command
+* `cat pythonorg.csv` - Shows the list of urls crawled on http://python.org
 
 ## Project layout
 
@@ -17,10 +19,10 @@ ScrapLink is a crawler that starts with a url on the web (ex: http://python.org)
     tests/
         # yet to be done
     .gitignore  # mention the files or directories to be ignored by git
-    CHANGELOG
-    LICENCE
+    CHANGELOG   # Release versions and features delivered
+    LICENCE # Licence for the project used
     Makefile
-    README.md
-    requirements.txt
-    setup.py
-    TODO 
+    README.md # Readme for Git repository
+    requirements.txt # List of python modules required
+    setup.py    # Used for setting up the environment
+    TODO    # List of features to be implemented
