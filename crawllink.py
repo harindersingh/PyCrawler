@@ -3,13 +3,39 @@ import datetime
 import os
 import sys
 import requests
+import csv
 from bs4 import BeautifulSoup
 
-MAX_DEPTH = 40
 url_mapper = {}
 
-def crawl_valid_url(url):
-    pass
+def crawl_store_links(url, child_links, logger):
+    """
+        Function used to crawl webpages
+
+        Parameters
+        ----------
+        url : string
+            Base url that will be the seed url
+        child_links : list 
+            Child links of base url in a list
+        logger : Log object used for logging events
+
+        Returns
+        -------
+        Stores a list of urls in the given webpage 
+        in a csv file
+    """
+    url_file = url.strip('http:')
+    url_file = url_file.strip('~!@#$%^&*()/\\,}{;:.')
+    url_file = url_file + ".csv"
+    with open(url_file, 'w') as f:
+        csvfile = csv.writer(f)
+        try:
+            csvfile.writerow(['Parent Link', ' ChildLink'])
+            for item in child_links:
+                csvfile.writerow([url, " " + item])
+        except csv.Error as e:
+            logger.error('file %s, line %d: %s' % (url_file, csvfile.line_num, e))
 
 def crawl_visit_url(url, logger):
     """
@@ -28,33 +54,20 @@ def crawl_visit_url(url, logger):
             BeautifulSoup object for the full webpage of requested url
     """
     page = requests.get(url)
-    if page.status_code == 200:
-        #OK
-        logger.debug("Response on hitting %s : %s The request is OK", url, page.status_code)
+    try:
+        page = requests.get(url)
         soup = BeautifulSoup(page.content, 'html.parser')
+        logger.debug(page.raise_for_status())
         return soup
-    elif page.status_code == 400:
-        #Bad Request
-        logger.debug("Response on hitting %s : %s \
-            The request cannot be fulfilled due to bad syntax", url, page.status_code)
-    elif page.status_code == 401:
-        #Unauthorized
-        logger.debug("Response on hitting %s : %s \
-            The request was a legal request, but the server is refusing to respond to it. \
-            For use when authentication is possible but has failed or not yet been provided", 
-            url, page.status_code)
-    elif page.status_code == 403:
-        #Forbidden
-        logger.debug("Response on hitting %s : %s The request was a legal request, \
-            but the server is refusing to respond to it", url, page.status_code)
-    elif page.status_code == 404:
-        #Not Found
-        logger.debug("Response on hitting %s : %s \
-            The requested page could not be found but may be available again in the future",
-            url, page.status_code)
-    else:
-        logger.error("Requested could not be processed, please check url %s", url)
-
+    except requests.exceptions.HTTPError as err:
+        logger.error(err)
+    except requests.exceptions.ConnectionError as err:
+        logger.error("Error Connecting:", err)
+    except requests.exceptions.Timeout as err:
+        logger.err("Timeout Error:", err)
+    except requests.exceptions.RequestException as err:
+        logger.error("Invalid request", err)
+    
 def crawllink_log():
     """
         Setup logging for scraplink
@@ -66,7 +79,7 @@ def crawllink_log():
 
     """
     logger = logging.getLogger()
-    logfile = "scraplink_" + datetime.datetime.now().strftime("%y-%m-%d-%H-%M") \
+    logfile = "crawllink_" + datetime.datetime.now().strftime("%y-%m-%d-%H-%M") \
             + ".txt"
     logfile = os.path.join("logs", logfile)
     handler = logging.FileHandler(filename=logfile, mode="w")
@@ -87,6 +100,8 @@ def crawl_link_collector(soup, maxDepth, logger):
         ----------
         soup : BeautifulSoup object
             used to perform operations on current webpage contents
+        maxDepth : Integer
+            max number of links that need to be crawled
         logger : Log object 
             used for logging events
 
@@ -94,6 +109,8 @@ def crawl_link_collector(soup, maxDepth, logger):
         -------
         forward_links[]
             List of web urls to be crawled further
+        maxDepth
+            return updated maxDepth variable
     """
     # Pull all instances of <a> tag within page
     link_lists = soup.find_all('a')
@@ -112,8 +129,8 @@ def crawl_link_collector(soup, maxDepth, logger):
                 url_mapper[temp_link] = 1
                 forward_links.append(item.get('href'))   
             if maxDepth == 0:
-                return forward_links  
-    return forward_links
+                return forward_links, maxDepth  
+    return forward_links, maxDepth
 
 def crawl_spider(seed_url, maxDepth, logger):
     """
@@ -131,20 +148,16 @@ def crawl_spider(seed_url, maxDepth, logger):
         -------
         Null
     """
-    if maxDepth:
-        logger.debug("Base URL = %s and MaxDepth = %d.", seed_url, maxDepth)
-    else:
-        maxDepth = MAX_DEPTH
-        logger.debug("Base URL = %s and MaxDepth = %d.", seed_url, maxDepth)
+    logger.debug("Base URL = %s and MaxDepth = %d.", seed_url, maxDepth)
     soup = crawl_visit_url(seed_url, logger)
-    forward_links = crawl_link_collector(soup, maxDepth, logger)
+    forward_links, maxDepth = crawl_link_collector(soup, maxDepth, logger)
     logger.debug("Web urls obtained on hitting %s, %d more can be crawled", 
         seed_url, maxDepth)
+    crawl_store_links(seed_url, forward_links, logger)
 
 def main():
     logger = crawllink_log()
     logger.debug("Logger is set up")
-    #crawl_spider("http://python.org", 1, logger)
     crawl_spider(str(sys.argv[1]), int(sys.argv[2]), logger)
 
 if __name__ == "__main__":
