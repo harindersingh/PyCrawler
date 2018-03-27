@@ -13,7 +13,7 @@ ScrapLink is a crawler that starts with a url on the web (ex: http://python.org)
 visit ./PyCrawlerDocs/site/index.html after cloning the project<br/>
 ./logs - Logs for the program execution
 
- `python .\crawllink.py url maxDepth` - Specify the seed url for crawling and a max number links that should be crawled
- `python .\crawllink.py http://python.org 40` - Sample run
- `cat url.csv` - Shows the urls crawler, select any one child link and crawl it using the first command
- `cat pythonorg.csv` - Shows the list of urls crawled on http://python.org
+ `python .\crawllink.py url maxDepth` - Specify the seed url for crawling and a max number links that should be crawled<br/>
+ `python .\crawllink.py http://python.org 40` - Sample run<br/>
+ `cat url.csv` - Shows the urls crawler, select any one child link and crawl it using the first command<br/>
+ `cat pythonorg.csv` - Shows the list of urls crawled on http://python.org<br/>
